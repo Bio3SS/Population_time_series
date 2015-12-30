@@ -1,1 +1,1 @@
-This README was made automatically by makestuff and should be changed.
+Population time series and pictures. Things called popxxxx are from GPDD.
