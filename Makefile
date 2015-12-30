@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: cod1678.Rout 
+target pngtarget pdftarget vtarget acrtarget: cod1678.simple.Rout 
 
 ##################################################################
 
@@ -18,16 +18,22 @@ include stuff.mk
 ## Not clear whether this chains through default run-R
 ## Unused rules are currently in ww.mk
 
-%.R: /home/dushoff/git/Bio3SS_content/WorkingWiki-export/Time_series/%
+%.R: /home/dushoff/git/Bio3SS_content/WorkingWiki-export/Time_series/%.R
 	$(copy)
 
 ##################################################################
 
 ## Content
 
+# HOOK
+cod1678.simple.Rout:
+
 Sources += $(wildcard *.tsv) $(wildcard *.R)
 
 cod1678.Rout: pop1678.tsv nafo_cod.Rout pop.R
+	$(run-R)
+
+%.simple.Rout: %.Rout simple.R
 	$(run-R)
 
 ######################################################################
