@@ -6,7 +6,6 @@ target pngtarget pdftarget vtarget acrtarget: cod1678.Rout
 
 ##################################################################
 
-
 # make files
 
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
@@ -25,6 +24,8 @@ include stuff.mk
 ##################################################################
 
 ## Content
+
+Sources += $(wildcard *.tsv) $(wildcard *.R)
 
 cod1678.Rout: pop1678.tsv nafo_cod.Rout pop.R
 	$(run-R)
