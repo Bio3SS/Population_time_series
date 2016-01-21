@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: gm10165.Rout 
+target pngtarget pdftarget vtarget acrtarget: liberia_confirmed.Rout 
 
 ##################################################################
 
@@ -18,28 +18,57 @@ include stuff.mk
 ## Not clear whether this chains through default run-R
 ## Unused rules are currently in ww.mk
 
-%.R: /home/dushoff/Dropbox/WorkingWiki-export/Time_series/%.R
+%.R: /home/dushoff/Dropbox/Downloads/zzzz/workingwiki-export/Time_series/%.R
+	$(copy)
+
+%.tsv: /home/dushoff/Dropbox/Downloads/zzzz/workingwiki-export/Time_series/%.tsv
 	$(copy)
 
 ##################################################################
 
-## Content
-
 # HOOK
-cod1678.simple.Rout:
+liberia_confirmed.simple.Rout: simple.R
+
+## Content
 
 Sources += $(wildcard *.tsv) $(wildcard *.R)
 
+## Codfish
 cod1678.Rout: pop1678.tsv nafo_cod.Rout pop.R
 	$(run-R)
 
+## Gypsy moths
 gm10165.Rout: pop10165.tsv gypsy_eggs.Rout pop.R
+	$(run-R)
+
+elk.Rout: elk.tsv elkNames.Rout pop.R
+	$(run-R)
+
+paramecia.Rout: paramecia.tsv parNames.Rout pop.R
 	$(run-R)
 
 %.simple.Rout: %.Rout simple.R
 	$(run-R)
 
+%.diff.Rout: %.Rout diff.R
+	$(run-R)
+
+%.plot.Rout: %.diff.Rout plot.R
+	$(run-R)
+
 ######################################################################
+
+# Data directories
+
+## WA Ebola
+wa/%: wa
+	cd $< && $(MAKE) $*
+	touch $@
+
+wa: 
+	/bin/ln -s $(gitroot)//WA_Ebola_Outbreak $@
+
+##################################################################
 
 ### Makestuff
 
