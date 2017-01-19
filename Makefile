@@ -21,11 +21,11 @@ include stuff.mk
 ## Just added PRECIOUS. Delete all this when you see it next year.
 
 .PRECIOUS: %.R
-%.R: /home/dushoff/Dropbox/Downloads/zzzz/workingwiki-export/Time_series/%.R
+%.R: /home/dushoff/Dropbox/Downloads/.zzzz/workingwiki-export/Time_series/%.R
 	$(copy)
 
 .PRECIOUS: %.tsv
-%.tsv: /home/dushoff/Dropbox/Downloads/zzzz/workingwiki-export/Time_series/%.tsv
+%.tsv: /home/dushoff/Dropbox/Downloads/.zzzz/workingwiki-export/Time_series/%.tsv
 	$(copy)
 
 ##################################################################
