@@ -1,3 +1,5 @@
+par(cex=1.5)
+
 if (!exists("dat")) dat <- read.table(input_files[[1]], header=TRUE)
 
 print(names(dat))
