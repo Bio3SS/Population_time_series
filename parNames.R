@@ -1,5 +1,5 @@
 
-gtitle <- "Gause paramecium experiment"
+# gtitle <- "Gause paramecium experiment"
 
 xn <- "observation"
 

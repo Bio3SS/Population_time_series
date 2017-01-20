@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: liberia_confirmed.Rout 
+target pngtarget pdftarget vtarget acrtarget: paramecia.plot.Rout 
 
 ##################################################################
 
@@ -48,6 +48,7 @@ gm10165.Rout: pop10165.tsv gypsy_eggs.Rout pop.R
 elk.Rout: elk.tsv elkNames.Rout pop.R
 	$(run-R)
 
+paramecia.plot.Rout: plot.R
 paramecia.Rout: paramecia.tsv parNames.Rout pop.R
 	$(run-R)
 

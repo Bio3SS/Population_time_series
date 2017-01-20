@@ -7,5 +7,5 @@ print(names(dat))
 # Also add xn and yn inference
 if (!exists("xlab")){xlab <- xn}
 if (!exists("ylab")){ylab <- yn}
-if (!exists("gtitle")){gtitle <- "Population"}
+if (!exists("gtitle")){gtitle <- NULL}
 
