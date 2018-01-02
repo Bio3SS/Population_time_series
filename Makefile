@@ -1,8 +1,7 @@
 # Population_time_series
 ### Hooks for the editor to set the default target
 current: target
-
-target pngtarget pdftarget vtarget acrtarget: paramecia.plot.Rout 
+-include $(ms)/target.mk
 
 ##################################################################
 
@@ -13,20 +12,8 @@ include sub.mk
 
 ##################################################################
 
-## Crib
-
-## Not clear whether this chains through default run-R
-## Unused rules are currently in ww.mk
-
-## Just added PRECIOUS. Delete all this when you see it next year.
-
-.PRECIOUS: %.R
-%.R: /home/dushoff/Dropbox/Downloads/.zzzz/workingwiki-export/Time_series/%.R
-	$(copy)
-
-.PRECIOUS: %.tsv
-%.tsv: /home/dushoff/Dropbox/Downloads/.zzzz/workingwiki-export/Time_series/%.tsv
-	$(copy)
+## Cribbed from a wiki called Time_series
+## Deleted rules 2018 Jan 01 (Mon)
 
 ##################################################################
 
