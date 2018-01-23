@@ -1,7 +1,7 @@
 # Population_time_series
 ### Hooks for the editor to set the default target
 current: target
--include $(ms)/target.mk
+-include target.mk
 
 ##################################################################
 
@@ -35,7 +35,7 @@ gm10165.Rout: pop10165.tsv gypsy_eggs.Rout pop.R
 elk.Rout: elk.tsv elkNames.Rout pop.R
 	$(run-R)
 
-paramecia.plot.Rout: plot.R
+
 paramecia.Rout: paramecia.tsv parNames.Rout pop.R
 	$(run-R)
 
@@ -43,6 +43,10 @@ paramecia.Rout: paramecia.tsv parNames.Rout pop.R
 	$(run-R)
 
 %.diff.Rout: %.Rout diff.R
+	$(run-R)
+
+elk.elkplot.Rout: elkplot.R
+%.elkplot.Rout: %.diff.Rout elkplot.R
 	$(run-R)
 
 %.plot.Rout: %.diff.Rout plot.R
