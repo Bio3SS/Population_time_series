@@ -19,7 +19,7 @@ print(ts + scale_y_log10())
 steptitle <- ifelse(is.null(gtitle), "Step-forward", gtitle)
 print(
 	ggplot(dat, aes(x=y, y=yp))
-	+ geom_point() + geom_smooth(method="lm")
+	+ geom_point() + geom_smooth(method="lm", formula=y~poly(x, 2))
 	+ geom_abline(slope=1, intercept=0)
 	+ xlab(ylab) + ylab("Next observation")
 	+ ggtitle(steptitle)

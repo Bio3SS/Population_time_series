@@ -35,7 +35,6 @@ gm10165.Rout: pop10165.tsv gypsy_eggs.Rout pop.R
 elk.Rout: elk.tsv elkNames.Rout pop.R
 	$(run-R)
 
-
 paramecia.Rout: paramecia.tsv parNames.Rout pop.R
 	$(run-R)
 
@@ -49,6 +48,8 @@ elk.elkplot.Rout: elkplot.R
 %.elkplot.Rout: %.diff.Rout elkplot.R
 	$(run-R)
 
+paramecia.plot.Rout:
+paramecia.plot.Rout:
 %.plot.Rout: %.diff.Rout plot.R
 	$(run-R)
 
