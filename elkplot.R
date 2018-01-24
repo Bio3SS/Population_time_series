@@ -1,3 +1,6 @@
+## Super-wet. Need to solve ggplot log-axis problem
+## Or else use existing pipeline stuff (elkNames)
+
 library(ggplot2)
 # theme_set(theme_bw(text(size=rel(2))))
 theme_set(
@@ -16,7 +19,8 @@ ts <- (
 print(ts)
 print(ts + scale_y_log10(breaks=seq(1000, 2000, by=250)))
 
-steptitle <- ifelse(is.null(gtitle), "Step-forward", gtitle)
+## steptitle <- ifelse(is.null(gtitle), "Step-forward", gtitle)
+steptitle <- "Step-forward"
 print(
 	ggplot(dat, aes(x=y, y=yp))
 	+ geom_point() + geom_smooth(method="lm", formula=y~poly(x, 2))
@@ -25,7 +29,8 @@ print(
 	+ ggtitle(steptitle)
 )
 
-inctitle <- ifelse(is.null(gtitle), "Rate of increase", gtitle)
+## inctitle <- ifelse(is.null(gtitle), "Rate of increase", gtitle)
+inctitle <- "Rate of increase"
 lamp <- (
 	ggplot(dat, aes(x=y, y=lam))
 	+ geom_point() + geom_smooth(method="lm")

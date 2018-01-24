@@ -48,8 +48,7 @@ elk.elkplot.Rout: elkplot.R
 %.elkplot.Rout: %.diff.Rout elkplot.R
 	$(run-R)
 
-paramecia.plot.Rout:
-paramecia.plot.Rout:
+paramecia.plot.Rout: plot.R
 %.plot.Rout: %.diff.Rout plot.R
 	$(run-R)
 
